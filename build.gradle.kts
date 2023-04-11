@@ -69,6 +69,16 @@ dependencies {
 	// webclient
 	implementation("io.netty:netty-resolver-dns-native-macos:4.1.79.Final:osx-aarch_64")
 
+	// openapi
+	implementation("org.springdoc:springdoc-openapi-kotlin:1.6.9")
+	implementation("org.springdoc:springdoc-openapi-starter-common:2.0.2")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2")
+
+	// MapStruct
+	implementation("org.mapstruct:mapstruct:1.5.1.Final")
+	kapt("org.mapstruct:mapstruct-processor:1.5.1.Final")
+	kaptTest("org.mapstruct:mapstruct-processor:1.5.1.Final")
+
 }
 
 tasks.withType<KotlinCompile> {

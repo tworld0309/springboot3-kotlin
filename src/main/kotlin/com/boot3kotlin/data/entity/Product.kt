@@ -10,7 +10,6 @@ enum class Category {
 }
 
 @Entity
-
 data class Product (
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,

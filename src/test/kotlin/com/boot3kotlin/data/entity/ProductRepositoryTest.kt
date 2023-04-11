@@ -19,7 +19,7 @@ class ProductRepositoryTest {
     fun init() {
         product = Product(
             id = 1,
-            name= "toto",
+            name= "iPhone",
             category= Category.Phone
         )
         product = productRepository.save(product)
@@ -28,6 +28,6 @@ class ProductRepositoryTest {
     @Test
     fun findById() {
         val fromDB = productRepository.findById(product.id!!)
-        Assertions.assertThat(fromDB.get().name).isEqualTo("toto")
+        Assertions.assertThat(fromDB.get().name).isEqualTo("iPhone")
     }
 }

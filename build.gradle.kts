@@ -50,14 +50,23 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
+	// HAL
+	implementation("org.springframework.data:spring-data-rest-hal-explorer")
+
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
+
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-jdbc")
 	// hikari - connection pool 보완 (enterprise 환경용)
 	implementation("com.mysql:mysql-connector-j")
+	runtimeOnly ("org.mariadb.jdbc:mariadb-java-client")
 	implementation("org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16")
 
 
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
+	// r2dbc
+	//implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
+	//implementation("com.github.jasync-sql:jasync-r2dbc-mysql:2.0.8")
 
 	// jpa
 	// Spring Boot 3.X.X

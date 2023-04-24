@@ -20,6 +20,10 @@ spring:
     name: springboot3-kotlin
   main:
     allow-bean-definition-overriding: true
+#  r2dbc:
+#    url: r2dbc:pool:mysql://localhost:3306/boot3?characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
+#    username: boot3
+#    password: boot3
   datasource:
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     username: boot3
@@ -27,11 +31,11 @@ spring:
     hikari:
       connection-timeout: 50000
       driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    url: jdbc:log4jdbc:mysql://localhost:3306/boot3?characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
+    url: jdbc:log4jdbc:mariadb://localhost:3306/boot3?characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
   jpa:
     hibernate:
       ddl-auto: create
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.MariaDBDialect
     properties:
       hibernate:
         format_sql: true
@@ -45,7 +49,9 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
 
-
+logging:
+  level:
+    org.springframework.r2dbc.core: debug
 
 #  session:
 #    storage-type: redis

@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController
 class HealthController {
     @GetMapping("/info", produces = ["application/json"])
     fun info(@Value("\${server.port}") _port: String) : String{
-        return "[kotlin] 서비스의 기본 동작 Port: {" + _port + "}";
+        return "[kotlin] 서비스의 기본 동작 Port: {$_port}";
     }
 }

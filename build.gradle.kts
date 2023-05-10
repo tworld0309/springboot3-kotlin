@@ -88,6 +88,11 @@ dependencies {
 	kapt("org.mapstruct:mapstruct-processor:1.5.1.Final")
 	kaptTest("org.mapstruct:mapstruct-processor:1.5.1.Final")
 
+	//logger
+	implementation("io.github.microutils:kotlin-logging-jvm:2.0.10")
+	implementation("org.slf4j:slf4j-api:1.7.30")
+
+
 }
 
 tasks.withType<KotlinCompile> {

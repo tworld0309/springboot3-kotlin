@@ -1,15 +1,14 @@
 package com.boot3kotlin.socket
 
-import com.boot3kotlin.logger
 import java.io.OutputStream
 import java.net.Socket
 import java.nio.charset.Charset
 import java.util.*
 import kotlin.concurrent.thread
 
-
-fun main(args: Array<String>) {
-    logger.debug("Client 접속")
+fun clientMain(args: Array<String>){
+//fun main(args: Array<String>) {
+    println("Client 접속")
     val IP_ADDRESS = "localhost"
     val PORT_NUMBER = 9999
 

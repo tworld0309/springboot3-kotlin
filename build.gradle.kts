@@ -20,6 +20,8 @@ plugins {
 	kotlin("plugin.jpa") version kotlinPluginVersion // apply false
 	kotlin("kapt") version "1.7.22"
 	idea
+
+	id("maven-publish")
 }
 
 
@@ -89,9 +91,14 @@ dependencies {
 	kaptTest("org.mapstruct:mapstruct-processor:1.5.1.Final")
 
 	//logger
-	implementation("io.github.microutils:kotlin-logging-jvm:2.0.10")
-	implementation("org.slf4j:slf4j-api:1.7.30")
+//	implementation("io.github.microutils:kotlin-logging-jvm:2.0.10")
+//	implementation("org.slf4j:slf4j-api:1.7.30")
 
+	// kafka
+	implementation("org.springframework.kafka:spring-kafka")
+
+	// Bean Validation
+	implementation("org.hibernate.validator:hibernate-validator:6.1.2.Final")
 
 }
 
@@ -113,4 +120,8 @@ idea {
 		sourceDirs.add(kaptMain)
 		generatedSourceDirs.add(kaptMain)
 	}
+}
+
+springBoot{
+	mainClass.set("com.boot3kotlin.Boot3KotlinApplicationKt")
 }

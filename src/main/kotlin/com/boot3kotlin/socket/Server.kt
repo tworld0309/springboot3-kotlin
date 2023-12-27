@@ -1,6 +1,5 @@
 package com.boot3kotlin.socket
 
-import com.boot3kotlin.logger
 import java.io.OutputStream
 import java.net.ServerSocket
 import java.net.Socket
@@ -8,11 +7,12 @@ import java.nio.charset.Charset
 import java.util.*
 import kotlin.concurrent.thread
 
-fun main(args: Array<String>) {
+fun serverMain(args: Array<String>){
+//fun main(args: Array<String>) {
     val PORT_NUMBER = 9999
 
     val server = ServerSocket(PORT_NUMBER)
-    logger.debug("Server is running on port ${server.localPort}")
+    println("Server is running on port ${server.localPort}")
 
     while (true) {
         val client = server.accept()

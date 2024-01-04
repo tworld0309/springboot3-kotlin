@@ -60,8 +60,9 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-jdbc")
 	// hikari - connection pool 보완 (enterprise 환경용)
-	implementation("com.mysql:mysql-connector-j")
-	runtimeOnly ("org.mariadb.jdbc:mariadb-java-client")
+	//implementation("com.mysql:mysql-connector-j")
+	//runtimeOnly ("org.mariadb.jdbc:mariadb-java-client")
+	implementation("org.postgresql:postgresql")
 	implementation("org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16")
 
 
@@ -99,6 +100,9 @@ dependencies {
 
 	// Bean Validation
 	implementation("org.hibernate.validator:hibernate-validator:6.1.2.Final")
+
+	// security
+	implementation("org.springframework.boot:spring-boot-starter-security:3.0.4")
 
 }
 

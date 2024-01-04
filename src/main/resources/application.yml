@@ -27,24 +27,25 @@ spring:
 #    username: boot3
 #    password: boot3
   datasource:
-    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    username: boot3
-    password: boot3
+    driver-class-name: org.postgresql.Driver #net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    username: root
+    password: root
     hikari:
       connection-timeout: 50000
-      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    url: jdbc:log4jdbc:mariadb://localhost:3306/boot3-kotlin?characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
+      #driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+#    url: jdbc:log4jdbc:mariadb://localhost:3306/boot3-kotlin?characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
+    url: jdbc:postgresql://localhost:5432/postgres?characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
   jpa:
     hibernate:
       ddl-auto: create
-    database-platform: org.hibernate.dialect.MariaDBDialect
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     properties:
       hibernate:
         format_sql: true
     defer-datasource-initialization: true
     open-in-view: true
     show_sql: true
-    format_sql: true
   servlet:
     multipart:
       enabled: true
